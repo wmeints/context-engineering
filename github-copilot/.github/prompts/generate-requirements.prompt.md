@@ -1,7 +1,7 @@
 ---
 mode: "agent"
 description: "Generate comprehensive requirements document through systematic research"
-tools: ['codebase', 'fetch', 'githubRepo', 'runCommands', 'search', 'FastMCP', 'websearch']
+tools: ['codebase', 'fetch', 'githubRepo', 'runCommands', 'search', 'websearch']
 ---
 
 # Generate Requirements Document
