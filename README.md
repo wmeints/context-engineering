@@ -3,7 +3,7 @@
 This repository is an experimental approach to software engineering with the help of
 agents based on the principle of Context Engineering. This approach works for
 [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) as well as
-[Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview).
+[Github Copilot in Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview).
 
 **Important**: I'm still testing many things, but here's the initial
 version of what I'm up to.
