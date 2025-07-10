@@ -59,29 +59,6 @@ context curation, treating AI agents as collaborative team members who benefit
 from the same thorough preparation and documentation that human developers
 require for complex tasks.
 
-## How does it work?
-
-Since agents can use tools to find files, read files, and create plans, we can
-carefully put together a collection of information to steer the agent in the
-right direction.
-
-Imagine this:
-
-- You place an instruction file (CLAUDE.md or copilot-instructions.md) in your
-  repository with the overall architecture and way of working for your solution.
-- Then, you let the agent write a requirements document based on a short
-  description of the feature you want to create.
-- Finally, you ask it to build the code based on the requirements document
-  rather than your short description.
-
-You gain two benefits:
-
-1. You have documented what the requirements are for your solution so anyone can
-   verify later if the application is doing what it's supposed to do.
-
-2. The agent has access to much more detail to generate the code for you,
-   resulting in a much higher quality solution.
-
 ## Getting started
 
 To help you get started with context engineering, I made this repository.
