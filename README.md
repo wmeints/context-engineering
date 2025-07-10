@@ -10,19 +10,18 @@ version of what I'm up to.
 
 ## What is context engineering?
 
-Context engineering is a systematic methodology for optimizing AI agent
-performance in software development tasks by strategically curating and
-structuring the information provided to the agent. Rather than giving agents
-brief, ad-hoc instructions, context engineering emphasizes deliberate
-preparation of comprehensive context that enables agents to produce
-higher-quality, more consistent results.
+Context engineering is a systematic methodology for optimizing AI agent performance in
+software development tasks by strategically curating and structuring the information
+provided to the agent. Rather than giving agents brief, ad-hoc instructions, context
+engineering emphasizes deliberate preparation of comprehensive context that enables
+agents to produce higher-quality, more consistent results.
 
 ### Core Principles
 
 **1. Layered Context Architecture**
 
-- **Project-level context** (CLAUDE.md/copilot-instructions.md): Architecture, technology stack,
-  coding standards, and testing approaches
+- **Project-level context** (CLAUDE.md/copilot-instructions.md): Architecture,
+  technology stack, coding standards, and testing approaches
 - **Task-level context** (TASK.md): Feature descriptions, examples,
   documentation references, and special considerations
 - **Requirements context**: Detailed implementation blueprints generated
@@ -42,10 +41,14 @@ enable agents to verify their own work against established criteria.
 
 ### Key Benefits
 
-- **Higher Code Quality**: Agents have access to comprehensive context including existing patterns, conventions, and architectural decisions
-- **Documentation as a Byproduct**: Requirements documents serve as lasting project documentation
-- **Reduced Iteration Cycles**: Well-researched context reduces the need for back-and-forth clarification
-- **Consistency**: Structured approach ensures consistent code quality across different features and team members
+- **Higher Code Quality**: Agents have access to comprehensive context including
+  existing patterns, conventions, and architectural decisions
+- **Documentation as a Byproduct**: Requirements documents serve as lasting project
+  documentation
+- **Reduced Iteration Cycles**: Well-researched context reduces the need for
+  back-and-forth clarification
+- **Consistency**: Structured approach ensures consistent code quality across different
+  features and team members
 
 ### Implementation Framework
 
