@@ -1,4 +1,4 @@
-# Context Engineering with Claude Code
+# Context Engineering with Github Copilot in Visual Studio Code
 
 This folder contains the necessary setup to get started with Context Engineering in
 Visual Studio Code. Please follow the instructions to apply the files to your own
