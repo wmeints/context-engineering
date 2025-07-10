@@ -190,3 +190,9 @@ context information through this protocol. Make sure to check out
 the [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
 repository for a collection of MCP servers that can provide additional
 context information.
+
+### Store personal preferences
+
+Add a `CLAUDE.local.md` to the project root with personal communication
+preferences. Make sure you include only personal preferences. Place
+project-level preferences in the `CLAUDE.md` file.
