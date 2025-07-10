@@ -1,69 +1,9 @@
-# Context Engineering
+# Context Engineering with Claude Code
 
-This repository is an experimental approach to software engineering with the
-help of agents based on the principle of Context Engineering. Currently I am
-testing this approach with [Claude Code](https://www.anthropic.com/claude-code).
-
-**Important**: I'm still testing many things, but here's the initial
-version of what I'm up to.
-
-## What is context engineering?
-
-Context engineering is a systematic methodology for optimizing AI agent
-performance in software development tasks by strategically curating and
-structuring the information provided to the agent. Rather than giving agents
-brief, ad-hoc instructions, context engineering emphasizes deliberate
-preparation of comprehensive context that enables agents to produce
-higher-quality, more consistent results.
-
-### Core Principles
-
-**1. Layered Context Architecture**
-
-- **Project-level context** (CLAUDE.md): Architecture, technology stack,
-  coding standards, and testing approaches
-- **Task-level context** (TASK.md): Feature descriptions, examples,
-  documentation references, and special considerations
-- **Requirements context**: Detailed implementation blueprints generated
-  through research and analysis
-
-**2. Research-Driven Requirements Generation**
-The methodology employs a two-phase approach:
-
-- **Phase 1**: Generate detailed requirements documents through systematic
-  research of the codebase, external documentation, and best practices
-- **Phase 2**: Implement features using the enriched requirements rather
-  than original brief descriptions
-
-**3. Self-Validating Workflows**
-Context engineering incorporates validation gates and quality checklists that
-enable agents to verify their own work against established criteria.
-
-### Key Benefits
-
-- **Higher Code Quality**: Agents have access to comprehensive context including existing patterns, conventions, and architectural decisions
-- **Documentation as a Byproduct**: Requirements documents serve as lasting project documentation
-- **Reduced Iteration Cycles**: Well-researched context reduces the need for back-and-forth clarification
-- **Consistency**: Structured approach ensures consistent code quality across different features and team members
-
-### Implementation Framework
-
-The methodology provides concrete tools including command templates for
-requirements generation (`/generate-requirements`) and
-implementation (`/implement-requirements`), along with quality scoring
-mechanisms to assess the completeness of context before proceeding with
-implementation.
-
-Context engineering represents a shift from prompt engineering to systematic
-context curation, treating AI agents as collaborative team members who benefit
-from the same thorough preparation and documentation that human developers
-require for complex tasks.
+This folder contains the necessary setup to get started with Context Engineering in
+Claude Code. Please follow the instructions to apply the files to your own project.
 
 ## Getting started
-
-To help you get started with context engineering, I made this repository.
-You can copy the contents of this repository to your project to get started
-quickly.
 
 ### Cloning the repository
 
@@ -77,12 +17,12 @@ git clone https://github.com/wmeints/context-engineering/
 
 Then, copy the following files to your project:
 
-```
-.claude/commands/generate-requirements.md    # Prompt template to create requirements documents.
-.claude/commands/implement-requirements.md   # Prompt template to implement requirements.
-requirements/.gitkeep                        # Folder to store the requirements documents.
-src/.gitkeep                                 # Source folder (optional)
-CLAUDE.md                                    # General instructions for the project
+```text
+claude-code/.claude/commands/generate-requirements.md    # Prompt template to create requirements documents.
+claude-code/.claude/commands/implement-requirements.md   # Prompt template to implement requirements.
+claude-code/requirements/.gitkeep                        # Folder to store the requirements documents.
+claude-code/src/.gitkeep                                 # Source folder (optional)
+claude-code/CLAUDE.md                                    # General instructions for the project
 ```
 
 If you're using this on a completely new repository I recommend setting up the
@@ -141,7 +81,7 @@ After you've created the requirements document, you can start to generate
 requirements. Start Claude Code with `claude` and then issue the following
 command:
 
-```
+```bash
 /generate-requirements TASK.md
 ```
 
@@ -161,7 +101,7 @@ Once you're happy with the requirements, you can start to generate code.
 Use the following command in the Claude Code terminal to kick off the
 implementation of the generated requirements document.
 
-```
+```bash
 /implement-requirements requirements/<your-requirements-doc.md>
 ```
 
