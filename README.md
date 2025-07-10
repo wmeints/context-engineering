@@ -14,7 +14,7 @@ complete a task. You're putting together just the right information into a
 prompt and a collection of files so that an agent can, for example, code a
 feature in your software solution.
 
-It's a new phenomenon that suddenly came up with the advent of agent like Github
+It's a new phenomenon that came up with the advent of agent like Github
 Copilot and Claude Code. Especially Claude Code has a large role in the use of
 context engineering.
 
