@@ -1,10 +1,11 @@
 # Context Engineering
 
 This repository is an experimental approach to software engineering with the
-help of agents based on the principle of Context Engineering.
+help of agents based on the principle of Context Engineering. Currently I am
+testing this approach with [Claude Code](https://www.anthropic.com/claude-code).
 
-I'm still testing many things, but here's the initial version of what I'm up
-to.
+**Important**: I'm still testing many things, but here's the initial
+version of what I'm up to.
 
 ## What is context engineering?
 
@@ -28,7 +29,7 @@ Imagine this:
 - You place an instruction file (CLAUDE.md or copilot-instructions.md) in your
   repository with the overall architecture and way of working for your solution.
 - Then, you let the agent write a requirements document based on a short
-  description of the feature you want to write.
+  description of the feature you want to create.
 - Finally, you ask it to build the code based on the requirements document
   rather than your short description.
 
