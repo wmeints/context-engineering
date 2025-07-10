@@ -20,7 +20,7 @@ higher-quality, more consistent results.
 
 **1. Layered Context Architecture**
 
-- **Project-level context** (CLAUDE.md): Architecture, technology stack,
+- **Project-level context** (CLAUDE.md/copilot-instructions.md): Architecture, technology stack,
   coding standards, and testing approaches
 - **Task-level context** (TASK.md): Feature descriptions, examples,
   documentation references, and special considerations
