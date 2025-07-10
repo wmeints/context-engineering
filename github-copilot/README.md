@@ -1,7 +1,8 @@
 # Context Engineering with Claude Code
 
 This folder contains the necessary setup to get started with Context Engineering in
-Claude Code. Please follow the instructions to apply the files to your own project.
+Visual Studio Code. Please follow the instructions to apply the files to your own
+project.
 
 ## Getting started
 
@@ -33,7 +34,8 @@ project structure with an LLM is bad idea**.
 
 **Important**: Make sure you have
 [the web search extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-websearchforcopilot)
-installed in VSCode. You'll need it to get high quality requirements documents.
+installed in VSCode and configured. You'll need it to get high quality requirements
+documents.
 
 ### Writing the initial context
 
@@ -51,9 +53,9 @@ keep enough space available in the context window for actual work.
 
 ### Writing the work item instructions
 
-Before you start using Claude Code to write code, you'll need to come up with an initial
-set of instructions for the requirements generation. Edit the `TASK.md` file in the root
-of the repository with the following content:
+Before you start using Github Copilot to write code, you'll need to come up with an
+initial set of instructions for the requirements generation. Edit the `TASK.md` file in
+the root of the repository with the following content:
 
 ```text
 # Feature: <Feature Name>
@@ -81,32 +83,32 @@ I need to provide as input for generating requirements.
 
 ### Generate a requirements document
 
-After you've created the requirements document, you can start to generate
-requirements. Start Claude Code with `claude` and then issue the following
-command:
+After you've created the work item in `TASK.md`, you can start to generate requirements.
+Open the Github Copilot Chat window in VSCode and enter the following command:
 
 ```bash
-/generate-requirements TASK.md
+/generate-requirements
 ```
 
-It will take a few minutes for Claude Code to write the full requirements
-document. You can continue to iterate on the requirements manually or by
-opening Claude Code in the terminal inside VSCode. The agent will automatically
-focus on the requirements document when you have it open in VSCode alongside
-Claude Code in the built-in terminal.
+**Important:** Make sure that you're using Agent Mode!
+
+It will take a few minutes for Github Copilot to write the full requirements document.
+You can continue to iterate on the requirements file in the same chat window.
 
 The generated requirements document will be stored in the `docs/requirements`
 directory.
 
-Once you're happy with the requirements, you can start to generate code.
+Once you're happy with the requirements, you can start to generate code. If you find that
+the generated requirements get too large, you can split the file into multiple separate
+requirements documents. You can even ask Github Copilot to do this for you.
 
 ### Generating code
 
-Use the following command in the Claude Code terminal to kick off the
-implementation of the generated requirements document.
+Open the generated requirements document, and type the following command in the Github
+Copilot Chat window making sure you're using Agent Mode.
 
 ```bash
-/implement-requirements requirements/<your-requirements-doc.md>
+/implement-requirements
 ```
 
 This will again take a few minutes to complete. This is a great time to get
@@ -115,8 +117,7 @@ hydrated, take a bio break, and talk to a colleague.
 ### Reviewing code
 
 Once you have the code it's important to verify that the code is to your liking.
-You can do this by [configuring Claude Code as a
-PR reviewer](https://docs.anthropic.com/en/docs/claude-code/github-actions).
+You can ask Github Copilot to review the code for you.
 
 I recommend manually reviewing your code because the AI can't catch every
 problem in your code.
@@ -126,17 +127,17 @@ problem in your code.
 ### :bulb: Break up tasks into smaller pieces
 
 I recommend taking a close look at the generated requirements and breaking them
-up into smaller chunks. While Claude Code can write impressive amounts of
-correct code, it's quite hard for you to review since you'll be overwhelmed.
+up into smaller chunks. While Github Copilot can write impressive amounts of
+correct code, it's quite hard for you to review since you'll be quickly overwhelmed.
 
 I typically copy/paste chunks into new markdown files, but of course you can
-ask Claude Code to split the generated requirements into smaller chunks in a
+ask Github Copilot to split the generated requirements into smaller chunks in a
 more semantic way.
 
 ### :bulb: Add project documentation
 
 The more details you can provide about your solution in documentation the
-easier it will be for Claude to find out how to approach the problem. I
+easier it will be for Github Copilot to find out how to approach the problem. I
 recommend writing architecture documentation using
 [Arc42](https://docs.arc42.org/home/) and storing it in the `docs/architecture`
 directory in the project.
@@ -155,13 +156,12 @@ context information.
 
 ### :bulb: Store personal preferences
 
-Add a `CLAUDE.local.md` to the project root with personal communication
-preferences. Make sure you include only personal preferences. Place
-project-level preferences in the `CLAUDE.md` file.
+Configure instruction files in your VSCode user settings for personal communication preferences.
+You can find more about this [in the manual](https://code.visualstudio.com/docs/copilot/copilot-customization#_specify-custom-instructions-in-settings).
 
 ### :bulb: Add more hierarchy in the instructions
 
-This template uses a single `CLAUDE.md` file in the root but you can add more
-detail by putting a `CLAUDE.md` file within your project directories. For
-example, you can provide specific instructions for your web frontend by placing
-a `CLAUDE.md` in the web frontend directory.
+This template uses a single `.github/copilot-instructions.md` file but you can add more
+detail by putting additional `*.instructions.md` files in the `.github/instructions` directory.
+[Please refer to the documentation](https://code.visualstudio.com/docs/copilot/copilot-customization#_use-instructionsmd-files)
+how to use these files.
