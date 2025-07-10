@@ -202,7 +202,7 @@ problem in your code.
 
 ## Tips and tricks
 
-### Break up tasks into smaller pieces
+### :bulb: Break up tasks into smaller pieces
 
 I recommend taking a close look at the generated requirements and breaking them
 up into smaller chunks. While Claude Code can write impressive amounts of
@@ -212,7 +212,7 @@ I typically copy/paste chunks into new markdown files, but of course you can
 ask Claude Code to split the generated requirements into smaller chunks in a
 more semantic way.
 
-### Add project documentation
+### :bulb: Add project documentation
 
 The more details you can provide about your solution in documentation the
 easier it will be for Claude to find out how to approach the problem. I
@@ -223,7 +223,7 @@ directory in the project.
 Requirements are already stored in `docs/requirements` to follow this
 convention.
 
-### Use MCP Servers
+### :bulb: Use MCP Servers
 
 One of the most powerful features of using an agent is the availability of the
 Model Context Protocol (MCP). You can connect the agent to a lot more
@@ -232,8 +232,15 @@ the [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/serve
 repository for a collection of MCP servers that can provide additional
 context information.
 
-### Store personal preferences
+### :bulb: Store personal preferences
 
 Add a `CLAUDE.local.md` to the project root with personal communication
 preferences. Make sure you include only personal preferences. Place
 project-level preferences in the `CLAUDE.md` file.
+
+### :bulb: Add more hierarchy in the instructions
+
+This template uses a single `CLAUDE.md` file in the root but you can add more
+detail by putting a `CLAUDE.md` file within your project directories. For
+example, you can provide specific instructions for your web frontend by placing
+a `CLAUDE.md` in the web frontend directory.
