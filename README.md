@@ -66,6 +66,12 @@ src/.gitkeep                                 # Source folder (optional)
 CLAUDE.md                                    # General instructions for the project
 ```
 
+If you're using this on a completely new repository I recommend setting up the
+project structure using some kind of project template first. For example, you
+can use `create-react-app`, `dotnet new`, `quarkus create app`, or `uv init`
+to start new projects in various languages. **Setting up a completely new
+project structure with an LLM is bad idea**.
+
 ### Writing the initial context
 
 To start working on the project, make sure to fill in the details in the
