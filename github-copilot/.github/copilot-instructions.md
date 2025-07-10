@@ -2,6 +2,10 @@
 
 Follow these instructions when writing code or documentation for the project.
 
+## Project goals
+
+TODO: Describe the goals of the project
+
 ## Project Structure
 
 TODO: Describe your project structure
