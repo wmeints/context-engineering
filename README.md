@@ -9,14 +9,55 @@ version of what I'm up to.
 
 ## What is context engineering?
 
-Context engineering is a way of collecting context needed for an agent to
-complete a task. You're putting together just the right information into a
-prompt and a collection of files so that an agent can, for example, code a
-feature in your software solution.
+Context engineering is a systematic methodology for optimizing AI agent
+performance in software development tasks by strategically curating and
+structuring the information provided to the agent. Rather than giving agents
+brief, ad-hoc instructions, context engineering emphasizes deliberate
+preparation of comprehensive context that enables agents to produce
+higher-quality, more consistent results.
 
-It's a new phenomenon that came up with the advent of agent like Github
-Copilot and Claude Code. Especially Claude Code has a large role in the use of
-context engineering.
+### Core Principles
+
+**1. Layered Context Architecture**
+
+- **Project-level context** (CLAUDE.md): Architecture, technology stack,
+  coding standards, and testing approaches
+- **Task-level context** (TASK.md): Feature descriptions, examples,
+  documentation references, and special considerations
+- **Requirements context**: Detailed implementation blueprints generated
+  through research and analysis
+
+**2. Research-Driven Requirements Generation**
+The methodology employs a two-phase approach:
+
+- **Phase 1**: Generate detailed requirements documents through systematic
+  research of the codebase, external documentation, and best practices
+- **Phase 2**: Implement features using the enriched requirements rather
+  than original brief descriptions
+
+**3. Self-Validating Workflows**
+Context engineering incorporates validation gates and quality checklists that
+enable agents to verify their own work against established criteria.
+
+### Key Benefits
+
+- **Higher Code Quality**: Agents have access to comprehensive context including existing patterns, conventions, and architectural decisions
+- **Documentation as a Byproduct**: Requirements documents serve as lasting project documentation
+- **Reduced Iteration Cycles**: Well-researched context reduces the need for back-and-forth clarification
+- **Consistency**: Structured approach ensures consistent code quality across different features and team members
+
+### Implementation Framework
+
+The methodology provides concrete tools including command templates for
+requirements generation (`/generate-requirements`) and
+implementation (`/implement-requirements`), along with quality scoring
+mechanisms to assess the completeness of context before proceeding with
+implementation.
+
+Context engineering represents a shift from prompt engineering to systematic
+context curation, treating AI agents as collaborative team members who benefit
+from the same thorough preparation and documentation that human developers
+require for complex tasks.
 
 ## How does it work?
 
