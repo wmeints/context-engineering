@@ -51,6 +51,8 @@ To start working on the project, make sure to fill in the details in the
 I recommend writing short and concise instructions for the LLM. This helps
 keep enough space available in the context window for actual work.
 
+**Tip**: Unsure of what to write in the `copilot-instructions.md` file for your project? You can ask Copilot to write the file for you. Tell it to create a `.github/copilot-instructions.md` file and mention that you want the topics covered listed above. For extra bonus points, mention that Copilot as an AI agent will have access to the code base so that it knows not to list out the whole project structure.
+
 ### Writing the work item instructions
 
 Before you start using Github Copilot to write code, you'll need to come up with an
