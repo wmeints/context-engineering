@@ -45,6 +45,11 @@ CLAUDE.md file. You'll need to provide the following:
 I recommend writing short and concise instructions for the LLM. This helps
 keep enough space available in the context window for actual work.
 
+**Tip**: Unsure of what to write in the `CLAUDE.md` file for your project? 
+You can ask Claude Code to generate the file for you. Use the `/init` 
+command inside Claude Code to get an initial set of instructions based on
+what your project looks like.
+
 ### Writing the work item instructions
 
 Before you start using Claude Code to write code, you'll need to come up with
