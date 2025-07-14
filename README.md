@@ -1,3 +1,5 @@
+![Context Engineering Logo](./images/context-engineering-logo.png)
+
 # Context Engineering
 
 This repository is an experimental approach to software engineering with the help of
