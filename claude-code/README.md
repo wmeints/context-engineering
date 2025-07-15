@@ -18,11 +18,11 @@ git clone https://github.com/wmeints/context-engineering/
 Then, copy the following files to your project:
 
 ```text
-claude-code/.claude/commands/generate-requirements.md    # Prompt template to create requirements documents.
-claude-code/.claude/commands/implement-requirements.md   # Prompt template to implement requirements.
-claude-code/requirements/.gitkeep                        # Folder to store the requirements documents.
-claude-code/src/.gitkeep                                 # Source folder (optional)
-claude-code/CLAUDE.md                                    # General instructions for the project
+claude-code/.claude/commands/generate-plan.md   # Prompt template to create requirements documents.
+claude-code/.claude/commands/implement-plan.md  # Prompt template to implement requirements.
+claude-code/implementation-plans/.gitkeep       # Folder to store the requirements documents.
+claude-code/src/.gitkeep                        # Source folder (optional)
+claude-code/CLAUDE.md                           # General instructions for the project
 ```
 
 If you're using this on a completely new repository I recommend setting up the
@@ -87,7 +87,7 @@ requirements. Start Claude Code with `claude` and then issue the following
 command:
 
 ```bash
-/generate-requirements TASK.md
+/generate-plan TASK.md
 ```
 
 It will take a few minutes for Claude Code to write the full requirements
@@ -96,7 +96,7 @@ opening Claude Code in the terminal inside VSCode. The agent will automatically
 focus on the requirements document when you have it open in VSCode alongside
 Claude Code in the built-in terminal.
 
-The generated requirements document will be stored in the `docs/requirements`
+The generated requirements document will be stored in the `docs/implementation-plans`
 directory.
 
 Once you're happy with the requirements, you can start to generate code.
@@ -107,7 +107,7 @@ Use the following command in the Claude Code terminal to kick off the
 implementation of the generated requirements document.
 
 ```bash
-/implement-requirements requirements/<your-requirements-doc.md>
+/implement-plan docs/implementation-plans/<your-plan-doc.md>
 ```
 
 This will again take a few minutes to complete. This is a great time to get

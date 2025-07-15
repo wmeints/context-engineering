@@ -71,7 +71,7 @@ Define specific commands and criteria for validation:
 
 ## Output Requirements
 
-Save the requirements document as: `docs/requirements/{feature-name}.md`
+Save the requirements document as: `docs/implementation-plans/{feature-name}.md`
 
 The document should be comprehensive enough for autonomous implementation without additional clarification.
 

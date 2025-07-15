@@ -62,7 +62,7 @@ writing the requirements document.
 
 ## Output
 
-Save the requirements as `docs/requirements/{feature-name}.md`
+Save the requirements as `docs/implementation-plans/{feature-name}.md`
 
 ## Quality checklist
 

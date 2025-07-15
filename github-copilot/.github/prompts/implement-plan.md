@@ -6,13 +6,16 @@ tools: ['changes', 'codebase', 'editFiles', 'extensions', 'fetch', 'findTestFile
 
 # Implement Requirements
 
-Implement a feature based on the requirements document provided as input.
+Implement a feature based on the planning document provided as input.
 
-**Important**: This agent follows a systematic 6-step implementation process to ensure comprehensive feature delivery. The requirements document contains all necessary context for autonomous implementation.
+**Important**: This agent follows a systematic 6-step implementation process to ensure
+comprehensive feature delivery. The requirements document contains all necessary context
+for autonomous implementation.
 
 ## Requirements File Input
 
-The requirements document path will be provided as input. Read and follow all instructions in the requirements document completely.
+The requirements document path will be provided as input. Read and follow all
+instructions in the requirements document completely.
 
 ## Execution Process
 

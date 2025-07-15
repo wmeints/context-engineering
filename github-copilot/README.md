@@ -19,11 +19,11 @@ git clone https://github.com/wmeints/context-engineering/
 Then, copy the following files to your project:
 
 ```text
-github-copilot/.github/prompts/generate-requirements.prompt.md      # Prompt to generate a requirements document
-github-copilot/.github/prompts/implement-requirements.prompt.md     # Prompt to generate a requirements document
-github-copilot/.github/copilot-instructions.md                      # Project-level instructions for Github Copilot
-github-copilot/docs/requirements/.gitkeep                           # Directory for storing requirements documents
-github-copilot/TASK.md                                              # The template for the initial feature description
+github-copilot/.github/prompts/generate-plan.prompt.md      # Prompt to generate a requirements document
+github-copilot/.github/prompts/implement-plan.prompt.md     # Prompt to generate a requirements document
+github-copilot/.github/copilot-instructions.md              # Project-level instructions for Github Copilot
+github-copilot/docs/requirements/.gitkeep                   # Directory for storing requirements documents
+github-copilot/TASK.md                                      # The template for the initial feature description
 ```
 
 If you're using this on a completely new repository I recommend setting up the
@@ -51,7 +51,11 @@ To start working on the project, make sure to fill in the details in the
 I recommend writing short and concise instructions for the LLM. This helps
 keep enough space available in the context window for actual work.
 
-**Tip**: Unsure of what to write in the `copilot-instructions.md` file for your project? You can ask Copilot to write the file for you. Tell it to create a `.github/copilot-instructions.md` file and mention that you want the topics covered listed above. For extra bonus points, mention that Copilot as an AI agent will have access to the code base so that it knows not to list out the whole project structure.
+**Tip**: Unsure of what to write in the `copilot-instructions.md` file for your project?
+You can ask Copilot to write the file for you. Tell it to create a
+`.github/copilot-instructions.md` file and mention that you want the topics covered
+listed above. For extra bonus points, mention that Copilot as an AI agent will have
+access to the code base so that it knows not to list out the whole project structure.
 
 ### Writing the work item instructions
 
@@ -89,7 +93,7 @@ After you've created the work item in `TASK.md`, you can start to generate requi
 Open the Github Copilot Chat window in VSCode and enter the following command:
 
 ```bash
-/generate-requirements
+/generate-plan
 ```
 
 **Important:** Make sure that you're using Agent Mode!
@@ -110,7 +114,7 @@ Open the generated requirements document, and type the following command in the 
 Copilot Chat window making sure you're using Agent Mode.
 
 ```bash
-/implement-requirements
+/implement-plan
 ```
 
 This will again take a few minutes to complete. This is a great time to get
