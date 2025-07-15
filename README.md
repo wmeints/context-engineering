@@ -80,9 +80,12 @@ result.
 ### Implementation Framework
 
 This repository's approach provides concrete tools, including command templates for
-requirements generation (`/generate-plan`) and implementation (`/implement-plan`), along
+plan generation (`/generate-plan`) and implementation (`/implement-plan`), along
 with quality scoring mechanisms to assess the completeness of context before proceeding
 with implementation.
+
+You can choose between two variants, Claude Code, and Visual Studio Code. We're open to
+adding other agents if people need support for them.
 
 Context engineering represents a shift from prompt engineering to systematic context
 curation, treating AI agents as collaborative team members who benefit from the same
