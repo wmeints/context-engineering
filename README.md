@@ -20,26 +20,47 @@ agents to produce higher-quality, more consistent results.
 
 ### Core Principles
 
-**1. Layered Context Architecture**
+The core idea is to provide the coding agent with enough context information and the
+right tools to write code for your solution effectively.
 
-- **Project-level context** (CLAUDE.md/copilot-instructions.md): Architecture,
-  technology stack, coding standards, and testing approaches
-- **Task-level context** (TASK.md): Feature descriptions, examples,
-  documentation references, and special considerations
-- **Requirements context**: Detailed implementation blueprints generated
-  through research and analysis
+For example, if you're working on a new feature as part of a microservice that uses DDD
+patterns, you'll want to explain to the agent that you're using DDD and what kind of
+microservice you're building.
 
-**2. Research-Driven Requirements Generation**
-The methodology employs a two-phase approach:
+#### Layered Context Architecture
 
-- **Phase 1**: Generate detailed requirements documents through systematic
-  research of the codebase, external documentation, and best practices
-- **Phase 2**: Implement features using the enriched requirements rather
-  than original brief descriptions
+Providing the agent with knowledge like the fact that you're building a DDD based
+service is generic to the whole project. So we start with a set of generic instructions
+for the project you're working on. Depending on the kind of agent you're using you'll
+need to write a `copilot-instructions.md` or a `CLAUDE.md` file to implement this
+generic context for the agent.
 
-**3. Self-Validating Workflows**
-Context engineering incorporates validation gates and quality checklists that
-enable agents to verify their own work against established criteria.
+Generic project information isn't enough to write code with an agent. If you want the
+agent to be good at writing code for a specific task, you'll need to explain the details
+of the task. Usually you'd write instructions for this in the chat window or in the
+input prompt for the agent. But since we want a structured approach, we'll use a
+dedicated file so we can write more detailed instructions. In this repo we use the
+`TASK.md` to provide an in-depth explanation of what task we're working on.
+
+#### Research-Driven Requirements Generation
+
+As detailed as tasks can be, we've found during testing that it's often not enough to
+write code based off just the task description alone. It helps to ask the agent for a
+detailed implementation plan. To generate a detailed implementation plan, we give the
+agent a specific prompt that combines the contents of `TASK.md` with instructions to
+come up with an implementation plan based on internet search and research in the
+codebase.
+
+In the implementation plan generation prompt we ask the agent to store the generated
+plan in a markdown file so we can review the plan before asking the agent to implement
+it in the codebase. Reviewing this plan and fine-tuning it to your needs is important as
+it greatly improves the quality of the output.
+
+#### Self-validating Workflows
+
+We found during testing that is important to ask the agent to verify its work. The
+prompts that we use to generate and execute implementation plans promote self-validation
+in the agent. This increases the quality of the end result.
 
 ### Key Benefits
 
@@ -55,8 +76,8 @@ enable agents to verify their own work against established criteria.
 ### Implementation Framework
 
 The methodology provides concrete tools including command templates for
-requirements generation (`/generate-requirements`) and
-implementation (`/implement-requirements`), along with quality scoring
+requirements generation (`/generate-plan`) and
+implementation (`/implement-plan`), along with quality scoring
 mechanisms to assess the completeness of context before proceeding with
 implementation.
 
