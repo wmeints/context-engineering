@@ -7,9 +7,6 @@ based on the Context Engineering principle. This approach works for
 [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview) as well as
 [Github Copilot in Visual Studio Code](https://code.visualstudio.com/docs/copilot/overview).
 
-**Important**: I'm still testing many things, but here's the initial
-version of what I'm up to.
-
 ## What is context engineering?
 
 If you've worked with GitHub Copilot or other coding agents before, you may have noticed
