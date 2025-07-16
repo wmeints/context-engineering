@@ -52,16 +52,22 @@ I recommend writing short and concise instructions for the LLM. This helps
 keep enough space available in the context window for actual work.
 
 **Tip**: Unsure of what to write in the `copilot-instructions.md` file for your project?
-You can ask Copilot to write the file for you. Tell it to create a
-`.github/copilot-instructions.md` file and mention that you want the topics covered
-listed above. For extra bonus points, mention that Copilot as an AI agent will have
-access to the code base so that it knows not to list out the whole project structure.
+You can ask Copilot to write the file for you. In the latest release you can
+run `Ctrl+Shift+P` (`Cmd+Shift+P` on mac) and type in "generate instructions". 
 
-### Writing the work item instructions
+### Writing work item instructions
 
-Before you start using Github Copilot to write code, you'll need to come up with an
-initial set of instructions for the requirements generation. Edit the `TASK.md` file in
-the root of the repository with the following content:
+After you've configured the instructions for your project you can start to work on
+implementing features. I added two methods for this:
+
+1. Planning work with Github Issues
+2. Planning work with TASK.md on your local computer
+
+#### Planning work with TASK.md on your local computer
+
+The process of implementing a feature using the context engineering approach
+starts with generating an implementation plan. If you want to work locally without GitHub 
+you can edit the `TASK.md` file in the root of the repository with the following content:
 
 ```text
 # Feature: <Feature Name>
@@ -87,7 +93,7 @@ things here that the agent is missing a lot.>
 I prefer to keep the `TASK.md` file checked in as a reminder to myself of what
 I need to provide as input for generating requirements.
 
-### Generate a requirements document
+#### Generate a requirements document
 
 After you've created the work item in `TASK.md`, you can start to generate requirements.
 Open the Github Copilot Chat window in VSCode and enter the following command:
@@ -108,7 +114,7 @@ Once you're happy with the requirements, you can start to generate code. If you 
 the generated requirements get too large, you can split the file into multiple separate
 requirements documents. You can even ask Github Copilot to do this for you.
 
-### Generating code
+#### Generating code
 
 Open the generated requirements document, and type the following command in the Github
 Copilot Chat window making sure you're using Agent Mode.
@@ -119,6 +125,19 @@ Copilot Chat window making sure you're using Agent Mode.
 
 This will again take a few minutes to complete. This is a great time to get
 hydrated, take a bio break, and talk to a colleague.
+
+### Planning work with Github Issues
+
+If you prefer to use Github Issues as the basis for your feature implementation you
+can skip writing the `TASK.md` file and use the `/plan-gh-issue: issue={issue-number}`
+prompt. Replace `{issue-number}` with the actual issue number.
+
+The implementation plan will be posted as comment to your issue so you can edit and
+refine the plan on Github. As with all prompts, you can continue to iterate in the chat
+window.
+
+After generating the plan, you can implement the GitHub issue with the prompt `/implement-gh-issue: issue={issue-number}`.
+Replace `{issue-number}` with the actual issue number.
 
 ### Reviewing code
 
