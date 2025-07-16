@@ -20,9 +20,10 @@ Then, copy the following files to your project:
 ```text
 claude-code/.claude/commands/generate-plan.md   # Prompt template to create requirements documents.
 claude-code/.claude/commands/implement-plan.md  # Prompt template to implement requirements.
-claude-code/implementation-plans/.gitkeep       # Folder to store the requirements documents.
+claude-code/docs/implementation-plans/.gitkeep          # Folder to store the requirements documents.
 claude-code/src/.gitkeep                        # Source folder (optional)
 claude-code/CLAUDE.md                           # General instructions for the project
+claude-code/TASK.md                             # The template for the initial feature description
 ```
 
 If you're using this on a completely new repository I recommend setting up the
@@ -45,19 +46,31 @@ CLAUDE.md file. You'll need to provide the following:
 I recommend writing short and concise instructions for the LLM. This helps
 keep enough space available in the context window for actual work.
 
-**Tip**: Unsure of what to write in the `CLAUDE.md` file for your project? 
-You can ask Claude Code to generate the file for you. Use the `/init` 
+**Tip**: Unsure of what to write in the `CLAUDE.md` file for your project?
+You can ask Claude Code to generate the file for you. Use the `/init`
 command inside Claude Code to get an initial set of instructions based on
 what your project looks like.
 
-### Writing the work item instructions
+### Writing work item instructions
 
-Before you start using Claude Code to write code, you'll need to come up with
-an initial set of instructions for the requirements generation. Create a new
-file `TASK.md` in the root of the repository with the following content:
+After you've configured the instructions for your project you can start to work on
+implementing features. I included two methods for this in the repository:
+
+1. Planning work with Github Issues
+2. Planning work with TASK.md on your local computer
+
+**IMPORTANT:** If you plan to work with Github Issues you need to have [the Github MCP
+server](https://docs.anthropic.com/en/docs/claude-code/mcp) or the [Github
+CLI](https://cli.github.com/) installed.
+
+#### Planning work with TASK.md on your local computer
+
+The process of implementing a feature using the context engineering approach starts with
+generating an implementation plan. If you want to work locally without GitHub you can
+edit the `TASK.md` file in the root of the repository with the following content:
 
 ```text
-# Feature
+# Feature: <Feature Name>
 
 <Describe the feature that you want to implement here.>
 
@@ -80,31 +93,29 @@ things here that the agent is missing a lot.>
 I prefer to keep the `TASK.md` file checked in as a reminder to myself of what
 I need to provide as input for generating requirements.
 
-### Generate a requirements document
+#### Generate an implementation plan
 
-After you've created the requirements document, you can start to generate
-requirements. Start Claude Code with `claude` and then issue the following
-command:
+After you've created the work item in `TASK.md`, you can start to generate an implementation plan.
+Start Claude Code with `claude` and then issue the following command:
 
 ```bash
 /generate-plan TASK.md
 ```
 
-It will take a few minutes for Claude Code to write the full requirements
-document. You can continue to iterate on the requirements manually or by
-opening Claude Code in the terminal inside VSCode. The agent will automatically
-focus on the requirements document when you have it open in VSCode alongside
-Claude Code in the built-in terminal.
+It will take a few minutes for Claude Code to write the full implementation plan.
+You can continue to iterate on the implementation plan file in the same chat session.
 
 The generated requirements document will be stored in the `docs/implementation-plans`
 directory.
 
-Once you're happy with the requirements, you can start to generate code.
+Once you're happy with the plan, you can start to generate code. If you find that
+the generated plan gets too large, you can split the file into multiple separate
+planning documents. You can even ask Claude Code to do this for you.
 
-### Generating code
+#### Generating code
 
-Use the following command in the Claude Code terminal to kick off the
-implementation of the generated requirements document.
+Open the generated implementation plan, and use the following command in the Claude Code
+terminal to kick off the implementation of the generated requirements document.
 
 ```bash
 /implement-plan docs/implementation-plans/<your-plan-doc.md>
@@ -113,14 +124,68 @@ implementation of the generated requirements document.
 This will again take a few minutes to complete. This is a great time to get
 hydrated, take a bio break, and talk to a colleague.
 
+### Planning work with Github Issues
+
+If you prefer to use Github Issues as the basis for your feature implementation instead
+of the local `TASK.md` file you can use the `/plan-gh-issue "{issue-number}"`
+prompt in the Copilot Chat Window. Replace `{issue-number}` with the actual issue number.
+
+The `plan-gh-issue` prompt relies on the content of the referenced issue on GitHub. You
+also need to have [the Github MCP
+Server](https://docs.anthropic.com/en/docs/claude-code/mcp) installed. Alternatively
+Claude Code will use the [Github CLI](https://cli.github.com/) to access your repository
+information.
+
+**Tip:** If you don't know the issue number, use the issue title. Claude Code will find
+the issue in your Github repository.
+
+During testing I've found that creating a detailed issue description is important to get
+the best results. I therefore recommend that you write issues following a similar
+structure to the one displayed below.
+
+```text
+<Describe the feature that you want to implement here.>
+
+## Examples
+
+<Insert examples here. You can provide them inline, or list files located in
+the `examples` folder if you have longer examples.>
+
+## Documentation
+
+<Refer to any relevant documentation such as input from a client or online
+documentation for libraries you want to use in the implementation later.>
+
+## Other considerations
+
+<Provide other considerations that are relevant to the feature. You can list
+things here that the agent is missing a lot.>
+```
+
+Make sure to give the issue a clear title to help Claude Code come up with the
+correct implementation plan.
+
+When you execute the `/plan-gh-issue "{issue-number}"` prompt, the implementation plan
+will be posted as comment to your issue so you can edit and refine the plan on Github.
+As with all prompts, you can continue to iterate in the chat window.
+
+After generating the plan, you can implement the GitHub issue with the prompt
+`/implement-gh-issue "{issue-number}"`. Replace `{issue-number}` with the actual
+issue number.
+
 ### Reviewing code
 
 Once you have the code it's important to verify that the code is to your liking.
-You can do this by [configuring Claude Code as a
-PR reviewer](https://docs.anthropic.com/en/docs/claude-code/github-actions).
+You can ask Claude Code to review the code for you.
 
 I recommend manually reviewing your code because the AI can't catch every
 problem in your code.
+
+**Note:** The AI doesn't always produce the output you want. At least not completely.
+This is okay! Just continue to iterate in the chat session. If you're working on
+something really large, you can also commit the changes and
+[rebase](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History) them later to clean
+up the history so you can go back and forth.
 
 ## Tips and tricks
 
@@ -166,3 +231,13 @@ This template uses a single `CLAUDE.md` file in the root but you can add more
 detail by putting a `CLAUDE.md` file within your project directories. For
 example, you can provide specific instructions for your web frontend by placing
 a `CLAUDE.md` in the web frontend directory.
+
+### :bulb: Not using GitHub? Don't worry, this works with other source control providers too
+
+I know that not everyone is using GitHub. Just modify the prompt template a bit, and
+install the correct MCP server. You may need to change the tool configuration a bit in
+the prompt. Refer to the [Claude Code MCP Server
+Documentation](https://docs.anthropic.com/en/docs/claude-code/mcp) for more information.
+
+- Gitlab MCP server: https://hub.docker.com/r/mcp/gitlab
+- Azure DevOps MCP server: https://github.com/microsoft/azure-devops-mcp
