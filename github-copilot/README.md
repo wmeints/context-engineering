@@ -65,9 +65,9 @@ implementing features. I included two methods for this in the repository:
 
 #### Planning work with TASK.md on your local computer
 
-The process of implementing a feature using the context engineering approach
-starts with generating an implementation plan. If you want to work locally without GitHub 
-you can edit the `TASK.md` file in the root of the repository with the following content:
+The process of implementing a feature using the context engineering approach starts with
+generating an implementation plan. If you want to work locally without GitHub you can
+edit the `TASK.md` file in the root of the repository with the following content:
 
 ```text
 # Feature: <Feature Name>
@@ -93,7 +93,7 @@ things here that the agent is missing a lot.>
 I prefer to keep the `TASK.md` file checked in as a reminder to myself of what
 I need to provide as input for generating requirements.
 
-#### Generate a requirements document
+#### Generate an implementation plan
 
 After you've created the work item in `TASK.md`, you can start to generate requirements.
 Open the Github Copilot Chat window in VSCode and enter the following command:
